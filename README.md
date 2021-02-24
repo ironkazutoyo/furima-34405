@@ -15,8 +15,6 @@
 
 ### Association
 - has_many :items
-- has_one :buyers
-- has_many :buys
 
 
 ## itemsテーブル
@@ -35,8 +33,6 @@
 
 ### Association
 - belongs_to :user
-- has_one :buyers
-- has_one :buys
 
 
 ## buyersテーブル
@@ -49,10 +45,10 @@
 |address            |string    |null: false|
 |building           |string    |           |
 |tel_num            |string    |null: false|
+|buys               |references|           |
 
 ### Association
-- belongs_to :user
-- belongs_to :item
+- belongs_to :buy
 
 
 ## buysテーブル
@@ -63,5 +59,4 @@
 |item  |references   |foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :item
+- has_one :buyer
