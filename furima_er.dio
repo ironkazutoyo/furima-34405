@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-02-24T10:28:17.396Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="RMeU3u2-xlP3z0A6XUC4" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-24T10:32:01.714Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="ES5umNZ00L1BOJzsQiKm" version="14.2.4" type="embed">
     <diagram id="zTq0sFqn3GvaZdHgVaoW" name="ページ1">
-        <mxGraphModel dx="666" dy="580" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="309" dy="416" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -66,7 +66,7 @@
                 <mxCell id="58" value="user(references型, foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="6" vertex="1">
                     <mxGeometry y="296" width="240" height="44" as="geometry"/>
                 </mxCell>
-                <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;startSize=20;endArrow=ERone;endFill=0;endSize=20;" edge="1" parent="1" source="10" target="61">
+                <mxCell id="72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERone;startFill=0;startSize=20;endArrow=ERone;endFill=0;endSize=20;exitX=0.6;exitY=0.967;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="40" target="61">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="10" value="buyers" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
@@ -130,10 +130,10 @@
                 <mxCell id="61" value="buys" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" vertex="1" parent="1">
                     <mxGeometry x="295" y="800" width="205" height="86" as="geometry"/>
                 </mxCell>
-                <mxCell id="62" value="user(references型, foreign_key: true&#10;)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="61">
+                <mxCell id="62" value="user(references型, foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="61">
                     <mxGeometry y="26" width="205" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="63" value="item(references型, foreign_key: true&#10;)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="61">
+                <mxCell id="63" value="item(references型, foreign_key: true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="61">
                     <mxGeometry y="56" width="205" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="&lt;ul&gt;&lt;li&gt;belongs_to :user&lt;/li&gt;&lt;li&gt;belongs_to :item&lt;/li&gt;&lt;li&gt;has_one :buyer&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
