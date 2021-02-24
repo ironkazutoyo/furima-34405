@@ -15,6 +15,7 @@
 
 ### Association
 - has_many :items
+- has_one :buy
 
 
 ## itemsテーブル
@@ -33,19 +34,20 @@
 
 ### Association
 - belongs_to :user
+- has_one :buy
 
 
 ## buyersテーブル
 
-|Column             |Type      |Options    |
-|-------------------|----------|-----------|
-|postal_code        |string    |null: false|
-|prefecture_id      |integer   |null: false|
-|municipality       |string    |null: false|
-|address            |string    |null: false|
-|building           |string    |           |
-|tel_num            |string    |null: false|
-|buys               |references|           |
+|Column             |Type      |Options          |
+|-------------------|----------|-----------------|
+|postal_code        |string    |null: false      |
+|prefecture_id      |integer   |null: false      |
+|municipality       |string    |null: false      |
+|address            |string    |null: false      |
+|building           |string    |                 |
+|tel_num            |string    |null: false      |
+|buys               |references|foreign_key: true|
 
 ### Association
 - belongs_to :buy
@@ -59,4 +61,6 @@
 |item  |references   |foreign_key: true|
 
 ### Association
+- belongs_to :user
+- belongs_to :item
 - has_one :buyer
