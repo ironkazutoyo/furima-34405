@@ -21,17 +21,17 @@
 
 ## itemsテーブル
 
-|Column            |Type      |Options    |
-|------------------|----------|-----------|
-|name              |string    |null: false|
-|describe          |text      |null: false|
-|category_id       |integer   |null: false|
-|status_id         |integer   |null: false|
-|shipping_charge_id|integer   |null: false|
-|shipping_area_id  |integer   |null: false|
-|days_to_ship_id   |integer   |null: false|
-|price             |integer   |null: false|
-|user              |references|null: false|
+|Column            |Type      |Options          |
+|------------------|----------|-----------------|
+|name              |string    |null: false      |
+|describe          |text      |null: false      |
+|category_id       |integer   |null: false      |
+|status_id         |integer   |null: false      |
+|shipping_charge_id|integer   |null: false      |
+|shipping_area_id  |integer   |null: false      |
+|days_to_ship_id   |integer   |null: false      |
+|price             |integer   |null: false      |
+|user              |references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -57,10 +57,10 @@
 
 ## buysテーブル
 
-|Column|Type         |Options    |
-|------|-------------|-----------|
-|user  |references   |null: false|
-|item  |references   |null: false|
+|Column|Type         |Options          |
+|------|-------------|-----------------|
+|user  |references   |foreign_key: true|
+|item  |references   |foreign_key: true|
 
 ### Association
 - belongs_to :user
