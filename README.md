@@ -53,4 +53,15 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_many :buys
+
+
+## buysテーブル
+
+|Column|Type         |Options    |
+|------|-------------|-----------|
+|user  |references   |null: false|
+|item  |references   |null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :item
