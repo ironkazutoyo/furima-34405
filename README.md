@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :items
-- has_many :buy
+- has_many :buys
 
 
 ## itemsテーブル
@@ -47,7 +47,7 @@
 |address            |string    |null: false      |
 |building           |string    |                 |
 |tel_num            |string    |null: false      |
-|buys               |references|foreign_key: true|
+|buy                |references|foreign_key: true|
 
 ### Association
 - belongs_to :buy
