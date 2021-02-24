@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-24T10:32:01.714Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="ES5umNZ00L1BOJzsQiKm" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-24T10:42:31.701Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="ZydEeuJSen0xwhwJWiYJ" version="14.2.4" type="embed">
     <diagram id="zTq0sFqn3GvaZdHgVaoW" name="ページ1">
         <mxGraphModel dx="309" dy="416" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -118,7 +118,7 @@
                         <mxPoint x="636" y="380" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="53" value="&lt;ul&gt;&lt;li&gt;has_many :items&lt;/li&gt;&lt;li&gt;has_one :buy&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+                <mxCell id="53" value="&lt;ul&gt;&lt;li&gt;has_many :items&lt;/li&gt;&lt;li&gt;has_many :buy&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
                     <mxGeometry x="220" y="40" width="160" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="54" value="&lt;ul&gt;&lt;li&gt;belongs_to :user&lt;/li&gt;&lt;li&gt;has_one :buy&lt;/li&gt;&lt;/ul&gt;" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
