@@ -4,13 +4,17 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :describe
-    validates :category_id, numericality: { other_than: 1 }
-    validates :status_id, numericality: { other_than: 1 }
-    validates :shipping_charge_id, numericality: { other_than: 1 }
-    validates :shipping_area_id, numericality: { other_than: 1 }
-    validates :days_to_ship_id, numericality: { other_than: 1 }
-    validates :price
+    validates :price, numericality: {message: 'Half-width number'}
+    validates :price, inclusion: { in:300..9999999, message: 'Out of setting range' }
     validates :user
+  end
+
+  with_options presence: true, numericality: { other_than: 1, message: 'Select' } do
+    validates :category_id
+    validates :status_id
+    validates :shipping_charge_id
+    validates :shipping_area_id
+    validates :days_to_ship_id
   end
 
   belongs_to :user
