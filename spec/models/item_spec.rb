@@ -58,18 +58,28 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
-      it '販売価格がアルファベットだと登録できない' do
-        @item.price = 'aaa'
+      it '販売価格が半角英語だと登録できない' do
+        @item.price = 'test'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price Half-width number')
+      end
+      it '販売価格が半角英数混合だと登録できない' do
+        @item.price = 'test111'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price Half-width number')
       end
       it '販売価格がひらがなだと登録できない' do
-        @item.price = 'あああ'
+        @item.price = 'てすと'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price Half-width number')
       end
       it '販売価格がカタカナだと登録できない' do
-        @item.price = 'アアア'
+        @item.price = 'テスト'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price Half-width number')
+      end
+      it '販売価格が漢字だと登録できない' do
+        @item.price = '試験'
         @item.valid?
         expect(@item.errors.full_messages).to include('Price Half-width number')
       end
