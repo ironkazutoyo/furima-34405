@@ -2,8 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
-    @items = Item.all
-    # @shipping_charge_id = Item.find_by(id: @item.shipping_charge_id)
+    @items = Item.all.order("created_at DESC")
   end
 
   def new
