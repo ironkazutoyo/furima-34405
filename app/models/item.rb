@@ -1,11 +1,10 @@
 class Item < ApplicationRecord
-
   with_options presence: true do
     validates :image
     validates :name
     validates :describe
-    validates :price, numericality: {message: 'Half-width number'}
-    validates :price, inclusion: { in:300..9999999, message: 'Out of setting range' }
+    validates :price, numericality: { message: 'Half-width number' }
+    validates :price, inclusion: { in: 300..9_999_999, message: 'Out of setting range' }
     validates :user
   end
 
@@ -26,7 +25,4 @@ class Item < ApplicationRecord
   belongs_to :shipping_charge
   belongs_to :shipping_area
   belongs_to :days_to_ship
-
-
-
 end
