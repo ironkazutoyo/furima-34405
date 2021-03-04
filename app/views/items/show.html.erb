@@ -9,11 +9,11 @@
     <div class="item-img-content">
       <%= image_tag @item.image ,class:"item-box-img" %>
       <%# 商品が売れている場合は、sold outを表示しましょう %>
-      <% if @item.nil? %>
-        <div class="sold-out">
-          <span>Sold Out!!</span>
-        </div>
-      <% end %>
+      <%# <% if @item.nil? %>
+        <%# <div class="sold-out"> %>
+          <%# <span>Sold Out!!</span> %>
+        <%# </div> %>
+      <%# <% end %>
       <%# //商品が売れている場合は、sold outを表示しましょう %>
     </div>
     <div class="item-price-box">
@@ -25,7 +25,6 @@
       </span>
     </div>
 
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
     <% if user_signed_in? %>
       <% if current_user == @item.user %>
         <%= link_to "商品の編集", "#", method: :get, class: "item-red-btn" %>
@@ -33,14 +32,10 @@
         <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
       <% else %>
         <%# 商品が売れていない場合はこちらを表示しましょう %>
-        <% unless @item.nil? %>
           <%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
-        <% end %>
         <%# //商品が売れていない場合はこちらを表示しましょう %>
       <% end %>
     <% end %>
-
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
 
     <div class="item-explain-box">
       <span><%= @item.describe %></span>
@@ -108,9 +103,9 @@
       後ろの商品 ＞
     </a>
   </div>
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
+  <%# カテゴリ内商品一覧表示のURL入力予定 %>
+  <a href="#" class="another-item"><%= @item.category.name %>をもっと見る</a>
+  <%# //カテゴリ内商品一覧表示のURL入力予定 %>
 </div>
 
 <%= render "shared/footer" %>
