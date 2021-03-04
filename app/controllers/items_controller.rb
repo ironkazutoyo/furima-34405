@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_signin_page, only: [:edit, :update]
-  before_action :move_to_root_path, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :item_find, only: [:show, :edit, :update]
+  before_action :move_to_root_path, only: [:edit, :update]
 
   def index
     @items = Item.all.order('created_at DESC')
@@ -40,17 +39,11 @@ class ItemsController < ApplicationController
                                  :days_to_ship_id, :price).merge(user_id: current_user.id)
   end
 
-  def move_to_signin_page
-    item = Item.find(params[:id])
-    redirect_to new_user_session_path unless user_signed_in?
+  def item_find
+    @item = Item.find(params[:id])
   end
 
   def move_to_root_path
-    item = Item.find(params[:id])
-    redirect_to root_path unless current_user == item.user
-  end
-
-  def item_find
-    @item = Item.find(params[:id])
+    redirect_to root_path unless current_user == @item.user
   end
 end
