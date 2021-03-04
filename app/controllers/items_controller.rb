@@ -42,16 +42,14 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:image, :name, :describe, :category_id, :status_id, :shipping_charge_id, :shipping_area_id,
                                  :days_to_ship_id, :price).merge(user_id: current_user.id)
   end
+
   def move_to_signin_page
     item = Item.find(params[:id])
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    redirect_to new_user_session_path unless user_signed_in?
   end
+
   def move_to_root_path
     item = Item.find(params[:id])
-    unless current_user == item.user
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user == item.user
   end
 end
