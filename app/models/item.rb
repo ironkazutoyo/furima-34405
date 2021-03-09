@@ -12,17 +12,18 @@ class Item < ApplicationRecord
     validates :category_id
     validates :status_id
     validates :shipping_charge_id
-    validates :shipping_area_id
+    validates :prefecture_id
     validates :days_to_ship_id
   end
 
   belongs_to :user
+  has_one :order_history
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :status
   belongs_to :shipping_charge
-  belongs_to :shipping_area
+  belongs_to :prefecture
   belongs_to :days_to_ship
 end
