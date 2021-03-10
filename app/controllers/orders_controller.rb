@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
   before_action :item_find, only: [:index, :new, :create]
   before_action :move_to_root_path, only: [:index, :new, :create]
 
-
   def index
     @order_form_object = OrderFormObject.new
   end
