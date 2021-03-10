@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
-    @item.image = fixture_file_upload('app/assets/images/flag.png')
   end
 
   describe '商品出品機能' do
@@ -44,9 +43,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Shipping charge Select')
       end
       it '発送元の地域が---だと登録できない' do
-        @item.shipping_area_id = 1
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Shipping area Select')
+        expect(@item.errors.full_messages).to include('Prefecture Select')
       end
       it '発送までの日数が---だと登録できない' do
         @item.days_to_ship_id = 1

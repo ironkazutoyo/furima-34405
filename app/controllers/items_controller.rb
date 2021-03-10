@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path if OrderHistory.exists?(item_id: @item.id)
   end
 
   def update
@@ -39,8 +40,10 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  private
+
   def item_params
-    params.require(:item).permit(:image, :name, :describe, :category_id, :status_id, :shipping_charge_id, :shipping_area_id,
+    params.require(:item).permit(:image, :name, :describe, :category_id, :status_id, :shipping_charge_id, :prefecture_id,
                                  :days_to_ship_id, :price).merge(user_id: current_user.id)
   end
 
