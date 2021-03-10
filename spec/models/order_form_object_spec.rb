@@ -54,10 +54,25 @@ RSpec.describe OrderFormObject, type: :model do
         @order_form_object.valid?
         expect(@order_form_object.errors.full_messages).to include('Tel num Input only number')
       end
+      it '電話番号は11桁以内でないと購入できない' do
+        @order_form_object.tel_num = '123456789012'
+        @order_form_object.valid?
+        expect(@order_form_object.errors.full_messages).to include('Tel num Input only number')
+      end
       it 'トークンが空では購入できない' do
         @order_form_object.token = nil
         @order_form_object.valid?
         expect(@order_form_object.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空だと購入できない' do
+        @order_form_object.user_id = nil
+        @order_form_object.valid?
+        expect(@order_form_object.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空だと購入できない' do
+        @order_form_object.item_id = nil
+        @order_form_object.valid?
+        expect(@order_form_object.errors.full_messages).to include("Item can't be blank")
       end
     end
   end
