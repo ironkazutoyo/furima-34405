@@ -27,7 +27,7 @@ RSpec.describe OrderFormObject, type: :model do
       it '都道府県がなければ購入できない' do
         @order_form_object.prefecture_id = 1
         @order_form_object.valid?
-        expect(@order_form_object.errors.full_messages).to include("Prefecture Select")
+        expect(@order_form_object.errors.full_messages).to include('Prefecture Select')
       end
       it '市区町村がなければ購入できない' do
         @order_form_object.municipality = ''
@@ -47,12 +47,12 @@ RSpec.describe OrderFormObject, type: :model do
       it '郵便番号にハイフンがなければ購入できない' do
         @order_form_object.postal_code = '1234567'
         @order_form_object.valid?
-        expect(@order_form_object.errors.full_messages).to include("Postal code Input correctly")
+        expect(@order_form_object.errors.full_messages).to include('Postal code Input correctly')
       end
       it '電話番号が半角数字以外では購入できない' do
         @order_form_object.tel_num = 'あああ'
         @order_form_object.valid?
-        expect(@order_form_object.errors.full_messages).to include("Tel num Input only number")
+        expect(@order_form_object.errors.full_messages).to include('Tel num Input only number')
       end
       it 'トークンが空では購入できない' do
         @order_form_object.token = nil
@@ -61,5 +61,4 @@ RSpec.describe OrderFormObject, type: :model do
       end
     end
   end
-
 end

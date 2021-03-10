@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Order, type: :model do
   before do
     @order = FactoryBot.build(:order)
-    
   end
 
   describe '商品購入機能' do
@@ -37,5 +36,4 @@ RSpec.describe Order, type: :model do
       end
     end
   end
-
 end
