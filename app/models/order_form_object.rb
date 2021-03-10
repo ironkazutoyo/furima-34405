@@ -1,6 +1,6 @@
 class OrderFormObject
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :municipality, :address, :building, :tel_num, :order_history_id, :user_id, :item_id
+  attr_accessor :postal_code, :prefecture_id, :municipality, :address, :building, :tel_num, :order_history_id, :user_id, :item_id, :token
 
   with_options presence: true do
     validates :postal_code, format: {with: /\A\d{3}[-]\d{4}\z/, message: 'Input correctly' }
@@ -11,6 +11,7 @@ class OrderFormObject
     # validates :order_history_id
     validates :user_id
     validates :item_id
+    validates :token
   end
 
   def save
