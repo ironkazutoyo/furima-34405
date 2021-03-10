@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :create]
-  before_action :new_order, only: [:index, :create]
-  before_action :item_find, only: [:index, :create]
-  before_action :move_to_root_path, only: [:index, :create]
+  before_action :authenticate_user!
+  before_action :new_order
+  before_action :item_find
+  before_action :move_to_root_path
 
   def index
     @order_form_object = OrderFormObject.new
