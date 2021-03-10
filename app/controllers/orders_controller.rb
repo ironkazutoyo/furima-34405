@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
 
   def index
     @order_form_object = OrderFormObject.new
+    redirect_to root_path if OrderHistory.exists?(item_id: @item.id)
   end
 
   def new
